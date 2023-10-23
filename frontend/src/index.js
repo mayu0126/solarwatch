@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     //errorElement: <ErrorPage />,
     children: [
       {
-        path: "/solarwatch",
+        path: "/",
         element: <HomePage />,
       },
       {

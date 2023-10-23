@@ -55,21 +55,3 @@
     border-radius: 3px;
     cursor: pointer;
 }
-  
-.buttons button[type="submit"] {
-    background-color: #213547;
-    color: white;
-}
-  
-  
-.buttons button[type="button"] {
-    background-color: rgba(172, 172, 172);
-}
-
-.buttons button[type="button"]:hover {
-    background-color: #b3b3b3;
-}
-
-.buttons button[type="submit"]:hover {
-    background-color: rgba(91, 146, 194, 1);
-}

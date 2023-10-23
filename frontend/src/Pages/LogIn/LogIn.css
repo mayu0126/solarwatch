@@ -58,23 +58,25 @@
 }
   
 .buttons button[type="submit"] {
-    background-color: #213547;
+    background-color: #5E6D8C;
     color: white;
     margin-right: 20px;
+}
+
+
+.buttons button[type="submit"]:hover {
+    background-color: #8EA3BF;
 }
   
   
 .buttons button[type="button"] {
-    background-color: rgba(172, 172, 172);
+    background-color: #D9AB73;
 }
 
 .buttons button[type="button"]:hover {
-    background-color: #b3b3b3;
+    background-color: #F2D399;
 }
 
-.buttons button[type="submit"]:hover {
-    background-color: rgba(91, 146, 194, 1);
-}
 
 .error-message {
     color: red;

@@ -17,7 +17,7 @@
     list-style-type:none;
     display: flex;
     align-items: center;
-    background-color: rgb(26, 43, 66);
+    background-color: #243340;
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
@@ -40,7 +40,6 @@
   }
   
   .Layout nav li {
-    margin: 5px;
     text-align: left;
   }
   
@@ -48,18 +47,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 60vw;
     font-weight: 500;
     font-size: 30px;
   }
-
-  .home:hover {
-    color: rgba(91, 146, 194, 1);
-  }
-
-  /*.menu-container {
-    
-  }*/
 
   .menu {
     display: inline-block; /*align the menus next to each other*/
@@ -68,8 +59,8 @@
     font-size: 18px;
   }
 
-  .menu:hover {
-    color: rgba(91, 146, 194, 1);
+  .menu-container {
+    font-size: 24px;
   }
 
   .link {
@@ -79,7 +70,7 @@
   }
   
   .link:hover {
-    color: #5b92c2;
+    color: #F2D399
   }
 
   .main-logo {
