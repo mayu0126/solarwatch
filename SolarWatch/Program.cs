@@ -86,7 +86,7 @@ void AddServices()
     builder.Services.AddScoped<IAuthService, AuthService>();
 
     //add the TokenService as a scoped service:
-    builder.Services.AddScoped<ITokenService, TokenService>();
+    builder.Services.AddScoped<ITokenService>(provider => new TokenService(issuerSigningKey!, validIssuer!, validAudience!));
 }
 
 void ConfigureSwagger()

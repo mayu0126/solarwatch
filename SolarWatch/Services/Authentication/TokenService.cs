@@ -10,6 +10,17 @@ namespace SolarWatch.Services.Authentication;
 public class TokenService : ITokenService
 {
     private const int ExpirationMinutes = 30;
+    
+    private readonly string _issuerSigningKey;
+    private readonly string _validIssuer;
+    private readonly string _validAudience;
+    
+    public TokenService(string issuerSigningKey, string validIssuer, string validAudience)
+    {
+        _issuerSigningKey = issuerSigningKey;
+        _validIssuer = validIssuer;
+        _validAudience = validAudience;
+    }
 
     public string CreateToken(IdentityUser user, string role)
     {
@@ -27,8 +38,8 @@ public class TokenService : ITokenService
         DateTime expiration) =>
         
         new(
-            "apiWithAuthBackend",
-            "apiWithAuthBackend",
+            _validIssuer,
+            _validAudience,
             claims,
             expires: expiration,
             signingCredentials: credentials
@@ -66,7 +77,7 @@ public class TokenService : ITokenService
     {
         return new SigningCredentials(
             new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes("SomethingSecret123")
+                Encoding.UTF8.GetBytes(_issuerSigningKey)
             ),
             SecurityAlgorithms.HmacSha256
         );
