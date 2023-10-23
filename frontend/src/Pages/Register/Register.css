@@ -1,0 +1,75 @@
+.CustomerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: rgba(55, 63, 65, 1);
+    background-color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+  
+.control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+  
+.control label {
+    margin-bottom: 5px;
+}
+  
+.control input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+  
+.password .control {
+    align-items: flex-start;
+}
+  
+.password .control label {
+    align-self: flex-start;
+}
+  
+.password .control input {
+    width: 100%;
+}
+  
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+  
+.buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+  
+.buttons button[type="submit"] {
+    background-color: #213547;
+    color: white;
+}
+  
+  
+.buttons button[type="button"] {
+    background-color: rgba(172, 172, 172);
+}
+
+.buttons button[type="button"]:hover {
+    background-color: #b3b3b3;
+}
+
+.buttons button[type="submit"]:hover {
+    background-color: rgba(91, 146, 194, 1);
+}

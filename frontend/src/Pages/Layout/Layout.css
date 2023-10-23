@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+  }
+
+.Layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+  }
+
+.Layout nav ul {
+    margin: 0;
+    width: 100vw;
+    padding: 10px;
+    list-style-type:none;
+    display: flex;
+    align-items: center;
+    background-color: rgb(26, 43, 66);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .Layout nav button {
+    padding: 0.5rem 1.7rem;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  .button-container {
+    margin-left: auto;
+    margin-right: 5vh;
+    font-size: 24px;
+  }
+  
+  .Layout nav button:hover {
+    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+  }
+  
+  .Layout nav li {
+    margin: 5px;
+    text-align: left;
+  }
+  
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    font-weight: 500;
+    font-size: 30px;
+  }
+
+  .home:hover {
+    color: rgba(91, 146, 194, 1);
+  }
+
+  /*.menu-container {
+    
+  }*/
+
+  .menu {
+    display: inline-block; /*align the menus next to each other*/
+    width: 7vw;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  .menu:hover {
+    color: rgba(91, 146, 194, 1);
+  }
+
+  .link {
+    color: white;
+    text-decoration: none;
+    margin-left: 12px;
+  }
+  
+  .link:hover {
+    color: #5b92c2;
+  }
+
+  .main-logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 5vh;
+    /*background-image: url('../../images/Logo_01.png');*/
+    background-size: cover;
+  }
+  
+  
