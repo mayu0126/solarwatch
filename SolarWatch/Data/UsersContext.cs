@@ -6,14 +6,16 @@ namespace SolarWatch.Data;
 
 public class UsersContext : IdentityDbContext<IdentityUser, IdentityRole, string>
 {
-    public UsersContext (DbContextOptions<UsersContext> options)
+    private readonly IConfiguration _configuration;
+    public UsersContext (DbContextOptions<UsersContext> options, IConfiguration configuration)
         : base(options)
     {
+        _configuration = configuration;
     }
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        // It would be a good idea to move the connection string to user secrets
-        options.UseSqlServer("Server=(local);Persist Security Info=False;Database=SolarWatch-6;Trusted_Connection=True");
+        var connectionString = _configuration["ConnectionStrings:DefaultConnection"];
+        options.UseSqlServer(connectionString);
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

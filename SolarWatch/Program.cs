@@ -48,7 +48,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-using var db = new SolarWatchContext(new DbContextOptionsBuilder<SolarWatchContext>().UseSqlServer(configuration.GetConnectionString("DefaultConnection")).Options, configuration);
+/*
+using var db = new SolarWatchContext(new DbContextOptionsBuilder<SolarWatchContext>().UseSqlServer(configuration["ConnectionStrings:DefaultConnection"]).Options, configuration);
 PrintCities();
 
 void PrintCities() //reads all the data from the Cities DbSet and prints them on the console
@@ -58,6 +59,7 @@ void PrintCities() //reads all the data from the Cities DbSet and prints them on
         Console.WriteLine($"{city.Id}, {city.Name}, Latitude: {city.Lat}, Longitude: {city.Lon}");
     }
 }
+*/
 
 AddRoles();
 AddAdmin();
