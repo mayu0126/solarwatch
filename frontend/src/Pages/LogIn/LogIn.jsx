@@ -40,7 +40,7 @@ const LogIn = () => {
       .then((data) => {
         setLoading(false);
         context.setUser(data); //set the user in the context
-        navigate("/");
+        navigate("/solarwatch");
       })
       .catch((error) => {
         setLoading(false);

@@ -9,6 +9,7 @@ import Layout from "./Pages/Layout";
 import HomePage from './Pages/HomePage';
 import Register from './Pages/Register';
 import LogIn from './Pages/LogIn';
+import SolarWatch from './Pages/SolarWatch';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LogIn />,
+      },
+      {
+        path: "/solarwatch",
+        element: <SolarWatch />,
       },
       
     ],

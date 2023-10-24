@@ -1,0 +1,32 @@
+.main-message-1 {
+    display: flex; /*flexbox arrangement*/
+    justify-content: center; /*distribution of space between elements*/
+    align-items: center;
+    font-size: 40px;
+    margin: 0;
+    margin-top: 20px;
+    color: rgba(55, 63, 65, 1);
+    height: 50px;
+    width: 100%;
+}
+
+.main-message-2 {
+    display: flex; /*flexbox arrangement*/
+    justify-content: center; /*distribution of space between elements*/
+    align-items: center;
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 20px;
+    color: rgba(55, 63, 65, 1);
+    height: 50px;
+    width: 100%;
+}
+
+.main-picture{
+    background-image: url('../../../public/images/main_picture_01.jpg');
+    background-size: cover; /*keeping the image scale*/
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+}
