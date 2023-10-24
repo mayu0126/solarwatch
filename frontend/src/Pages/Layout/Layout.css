@@ -4,6 +4,8 @@
 
 .Layout {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -17,8 +19,7 @@
     list-style-type:none;
     display: flex;
     align-items: center;
-    background-color: #243340;
-    color: white;
+    color: #311c14;
     font-size: 1.5rem;
     font-weight: bold;
   }
@@ -27,12 +28,6 @@
     padding: 0.5rem 1.7rem;
     font-weight: bold;
     margin-left: 10px;
-  }
-
-  .button-container {
-    margin-left: auto;
-    margin-right: 5vh;
-    font-size: 24px;
   }
   
   .Layout nav button:hover {
@@ -52,33 +47,23 @@
     font-size: 30px;
   }
 
-  .menu {
-    display: inline-block; /*align the menus next to each other*/
-    width: 7vw;
-    font-weight: 400;
-    font-size: 18px;
-  }
-
   .menu-container {
-    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
   }
 
   .link {
-    color: white;
+    color: #311c14;
     text-decoration: none;
     margin-left: 12px;
+    font-size: 20px;
+    font-weight: 700;
   }
   
   .link:hover {
-    color: #F2D399
-  }
-
-  .main-logo {
-    width: 60px;
-    height: 60px;
-    margin-left: 5vh;
-    /*background-image: url('../../images/Logo_01.png');*/
-    background-size: cover;
+    color: #A6460F
   }
   
   

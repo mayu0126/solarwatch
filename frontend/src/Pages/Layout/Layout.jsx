@@ -21,16 +21,8 @@ const Layout = () => {
                     </div>
                     <div className="menu-container">
                         <li className="menu">
-                            <Link to="/menu1" className="link">Menu 1</Link>
+                            <Link to="/" className="link">Home</Link>
                         </li>
-                        <li className="menu">
-                            <Link to="/menu2" className="link">Menu 2</Link>
-                        </li>
-                    </div>
-                    <li className="home">
-                        <Link to="/" className="link">SOLARWATCH</Link>
-                    </li>
-                    <div className="button-container">
                         {!context.user && (
                             <>
                             <Link to="/register">

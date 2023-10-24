@@ -1,12 +1,37 @@
+.solar, .watch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: 800;
+    color: #311c14;
+    margin: -20px;
+    text-decoration: none;
+}
+
+.main-container{
+    padding: 20px;
+    display: block;
+    justify-content: center; /*distribution of space between elements*/
+    align-items: center;
+    background-image: url('../../../public/images/main_picture_01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: fit-content;
+    width: 500px;
+    height: 700px;
+    border-radius: 50px;
+}
+
 .main-message-1 {
     display: flex; /*flexbox arrangement*/
     justify-content: center; /*distribution of space between elements*/
     align-items: center;
-    font-size: 40px;
+    font-size: 30px;
     margin: 0;
-    margin-top: 20px;
-    color: rgba(55, 63, 65, 1);
-    height: 50px;
+    margin-top: 100px;
+    color: rgb(255, 255, 255);
     width: 100%;
 }
 
@@ -14,19 +39,21 @@
     display: flex; /*flexbox arrangement*/
     justify-content: center; /*distribution of space between elements*/
     align-items: center;
-    font-size: 30px;
+    font-size: 18px;
     margin: 0;
     margin-bottom: 20px;
-    color: rgba(55, 63, 65, 1);
-    height: 50px;
+    color: rgb(255, 255, 255);
     width: 100%;
 }
 
+
+/*
 .main-picture{
     background-image: url('../../../public/images/main_picture_01.jpg');
-    background-size: cover; /*keeping the image scale*/
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 500px;
+    height: 800px;
 }
+*/

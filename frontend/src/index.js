@@ -28,12 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LogIn />,
-      },
-      {
-        path: "/solarwatch",
-        element: <SolarWatch />,
-      },
-      
+      },      
     ],
   },
 ]);
