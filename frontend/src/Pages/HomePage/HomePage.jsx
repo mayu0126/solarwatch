@@ -10,13 +10,13 @@ function HomePage() {
     <div className="main-container">
       {context.user ? (
         <>
-          <Link to="/solarwatch" className="solar">
+          <Link to="/" className="solar">
             SOLAR
           </Link>
-          <Link to="/solarwatch" className="watch">
+          <Link to="/" className="watch">
             WATCH
           </Link>
-          <div className='welcome-text'>Welcome {context.user.userName}!</div>
+          <div className='welcome-text'>Welcome <b>{context.user.userName}</b>!</div>
         </>
       ):(
         <>

@@ -28,6 +28,7 @@ const sendSolarDataRequest = (solarDataRequest, user) => {
 function SolarWatch() {
   const { user, setUser, login, logout } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
+  const [isErrorMessageVisible, setIsErrorMessageVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [solarData, setSolarData] = useState(null);
 
@@ -42,6 +43,12 @@ function SolarWatch() {
         setLoading(false);
         console.error("Request error:", error.message);
         setErrorMessage(error.message);
+        setIsErrorMessageVisible(true);
+
+        setTimeout(() => {
+          setIsErrorMessageVisible(false);
+        }, 3000);
+
       });
   };
 
@@ -53,12 +60,13 @@ function SolarWatch() {
           onSave={handleSolarDataRequest}
           disabled={loading}
           errorMessage={errorMessage}
+          isErrorMessageVisible={isErrorMessageVisible}
         />
         <div>{solarData ? (
-          <>
-            <div>Sunrise: {solarData.sunrise}</div>
-            <div>Sunset: {solarData.sunset}</div>
-          </>
+          <div className="solar-data-container">
+            <div className="sunrise-data">Sunrise: {solarData.sunrise}</div>
+            <div className="sunset-data">Sunset: {solarData.sunset}</div>
+          </div>
           ) : (null)}
         </div>
       </>

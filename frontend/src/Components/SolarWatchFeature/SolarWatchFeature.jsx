@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const SolarWatchFeature = ({ onSave, disabled, errorMessage }) => {
+const SolarWatchFeature = ({ onSave, disabled, errorMessage, isErrorMessageVisible }) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ const SolarWatchFeature = ({ onSave, disabled, errorMessage }) => {
     <form className="SolarWatchForm" onSubmit={onSubmit}>
 
         {<div className="control">
-        <label htmlFor="cityName">City:</label>
+        <label htmlFor="cityName">CITY:</label>
         <input
             className="input-field"
             name="cityName"
@@ -30,9 +30,11 @@ const SolarWatchFeature = ({ onSave, disabled, errorMessage }) => {
         </div>}
 
         <div className="control">
-        <label htmlFor="date">Date:</label>
+        <label htmlFor="date">DATE:</label>
         <input
             className="input-field"
+            pattern="\d{4}-\d{2}-\d{2}" maxlength="10"
+            placeholder="YYYY-MM-DD"
             name="date"
             id="date"
         />
@@ -42,7 +44,7 @@ const SolarWatchFeature = ({ onSave, disabled, errorMessage }) => {
             Get sunrise and sunset
         </button>
     </form>
-    {errorMessage && <p className="error-message">{errorMessage}</p>}
+    {isErrorMessageVisible && <p className="error-message">{errorMessage}</p>}
     </>
     );
 };
