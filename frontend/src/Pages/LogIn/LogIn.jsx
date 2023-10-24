@@ -18,9 +18,14 @@ const loginUser = (user) => {
   }).then((res) => {
     if (!res.ok) {
       return res.json().then((data) => {
-        throw new Error(data["Bad credentials"][0] || "Login failed");
-        //if the object contains "Bad credentials" we get that error message, 
-        //otherwise generally the message "Login failed"
+        let errorMessage = "Login failed";
+        if (data) {
+          if (data["Bad credentials"]) {
+            errorMessage = data["Bad credentials"][0];
+          }
+        }
+
+        throw new Error(errorMessage);
       });
     }
     return res.json(); //if the response is "ok"

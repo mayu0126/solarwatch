@@ -18,7 +18,18 @@ const sendSolarDataRequest = (solarDataRequest, user) => {
     .then((res) => {
     if (!res.ok) {
       return res.json().then((data) => {
-        throw new Error("Request failed");
+
+        let errorMessage = "Request failed";
+        if (data && data.errors) {
+          if (data.errors.date && data.errors.date[0]) {
+            errorMessage = data.errors.date[0];
+          }
+          else if (data.errors.cityName && data.errors.cityName[0]) {
+            errorMessage = data.errors.cityName[0];
+          }
+        }
+
+        throw new Error(errorMessage);
       });
     }
     return res.json(); //if the response is "ok"

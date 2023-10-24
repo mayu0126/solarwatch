@@ -33,7 +33,7 @@ const SolarWatchFeature = ({ onSave, disabled, errorMessage, isErrorMessageVisib
         <label htmlFor="date">DATE:</label>
         <input
             className="input-field"
-            pattern="\d{4}-\d{2}-\d{2}" maxlength="10"
+            pattern="\d{4}-\d{2}-\d{2}" maxLength="10"
             placeholder="YYYY-MM-DD"
             name="date"
             id="date"
