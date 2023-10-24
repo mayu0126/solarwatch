@@ -23,6 +23,7 @@ const SolarWatchFeature = ({ onSave, disabled, errorMessage }) => {
         {<div className="control">
         <label htmlFor="cityName">City:</label>
         <input
+            className="input-field"
             name="cityName"
             id="cityName"
         />
@@ -31,16 +32,15 @@ const SolarWatchFeature = ({ onSave, disabled, errorMessage }) => {
         <div className="control">
         <label htmlFor="date">Date:</label>
         <input
+            className="input-field"
             name="date"
             id="date"
         />
         </div>
 
-        <div className="buttons">
-        <button type="submit" disabled={disabled}>
+        <button className="submit-button" type="submit" disabled={disabled}>
             Get sunrise and sunset
         </button>
-        </div>
     </form>
     {errorMessage && <p className="error-message">{errorMessage}</p>}
     </>

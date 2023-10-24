@@ -10,12 +10,13 @@ function HomePage() {
     <div className="main-container">
       {context.user ? (
         <>
-        <Link to="/solarwatch" className="solar">
-          SOLAR
-        </Link>
-        <Link to="/solarwatch" className="watch">
-          WATCH
-        </Link>
+          <Link to="/solarwatch" className="solar">
+            SOLAR
+          </Link>
+          <Link to="/solarwatch" className="watch">
+            WATCH
+          </Link>
+          <div className='welcome-text'>Welcome {context.user.userName}!</div>
         </>
       ):(
         <>
@@ -32,7 +33,9 @@ function HomePage() {
         Get the sunrise and sunset data for your favourite cities
       </div>
       {context.user ? (
-        <SolarWatch/>
+        <>
+          <SolarWatch/>
+        </>
       ) : (
         <div className="main-message-2">
         - Sign In or Register to use the amazing SolarWatch app -
