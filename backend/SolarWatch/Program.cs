@@ -85,7 +85,7 @@ void AddServices()
 
     //register the repository interfaces and implementations:
     builder.Services.AddSingleton<ICityRepository>(provider => new CityRepository(configuration, databaseConnectionString));
-    builder.Services.AddSingleton<ISunriseAndSunsetRepository, SunriseAndSunsetRepository>();
+    builder.Services.AddSingleton<ISunriseAndSunsetRepository>(provider => new SunriseAndSunsetRepository(configuration, databaseConnectionString));
     
     //register the new application services:
     builder.Services.AddScoped<IAuthService, AuthService>();
