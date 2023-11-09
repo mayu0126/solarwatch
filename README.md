@@ -11,6 +11,21 @@ SolarWatch offers the following features:
 - **User Registration Handling**: Manage user registration and authentication.
 - **Retrieve Sunset & Sunrise for a Specific City**: Register and log in and obtain accurate sunset and sunrise times for a chosen city.
 
+## Languages/Tools/Technologies
+- C# (backend)
+- JavaScript (frontend)
+- HTML and CSS
+- Node.js
+- React.js
+- ASP.NET Web API
+- Entity Framework Core
+- ASP.NET Core Identity
+- PostgreSQL (for the deployed application) or Microsoft SQL Server (to run locally)
+- Docker
+- Sunset and sunrise times API
+- OpenWeather's Geocoding API
+
+
 ## Installation
 To set up the SolarWatch app, follow these steps:
 
