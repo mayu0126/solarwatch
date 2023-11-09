@@ -14,8 +14,9 @@ public class UsersContext : IdentityDbContext<IdentityUser, IdentityRole, string
     }
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        var connectionString = _configuration["ConnectionStrings:DefaultConnection"];
+        //var connectionString = _configuration["ConnectionStrings:DefaultConnection"];
         //options.UseSqlServer(connectionString);
+        var connectionString = Environment.GetEnvironmentVariable("DefaultConnection");
         options.UseNpgsql(connectionString!);
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -17,7 +17,8 @@ public class GeocodingApi : IGeocodeDataProvider
     public async Task<string> GetCityGeocodeAsync(string cityName)
     {
 
-        var apiKey = _configuration["GeocodingApi:ApiKey"];
+        //var apiKey = _configuration["GeocodingApi:ApiKey"];
+        var apiKey = Environment.GetEnvironmentVariable("ApiKey");
         var url = $"http://api.openweathermap.org/geo/1.0/direct?q={cityName}&limit={1}&appid={apiKey}";
 
         var client = new HttpClient();

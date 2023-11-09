@@ -21,9 +21,11 @@ var configuration = new ConfigurationBuilder()
 var appSettings = configuration.GetSection("AppSettings");
 var validIssuer = appSettings["ValidIssuer"];
 var validAudience = appSettings["ValidAudience"];
-var issuerSigningKey = builder.Configuration["UserSecrets:IssuerSigningKey"];
-var databaseConnectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
-var geocodingApiKey = builder.Configuration["GeocodingApi:ApiKey"];
+//var issuerSigningKey = builder.Configuration["UserSecrets:IssuerSigningKey"];
+//var databaseConnectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
+//var geocodingApiKey = builder.Configuration["GeocodingApi:ApiKey"];
+
+var issuerSigningKey = Environment.GetEnvironmentVariable("IssuerSigningKey");
 
 AddServices();
 ConfigureSwagger();
