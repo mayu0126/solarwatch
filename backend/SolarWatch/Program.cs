@@ -140,6 +140,7 @@ void AddDbContext()
 {
     //register the new UsersContext as a DbContext:
     builder.Services.AddDbContext<UsersContext>();
+    builder.Services.AddDbContext<SolarWatchContext>();
 }
 
 void AddAuthentication()

@@ -18,8 +18,11 @@ public class SolarWatchContext : DbContext
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        string connectionString = _configuration.GetConnectionString("DefaultConnection");
-        optionsBuilder.UseSqlServer(connectionString);
+        //string connectionString = _configuration["ConnectionStrings:DefaultConnection"];
+        //optionsBuilder.UseSqlServer(connectionString);
+        
+        string connectionString = Environment.GetEnvironmentVariable("DefaultConnection");
+        optionsBuilder.UseNpgsql(connectionString);
     }
     
     
