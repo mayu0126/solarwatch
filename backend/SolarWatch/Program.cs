@@ -26,6 +26,7 @@ var validAudience = appSettings["ValidAudience"];
 //var geocodingApiKey = builder.Configuration["GeocodingApi:ApiKey"];
 
 var issuerSigningKey = Environment.GetEnvironmentVariable("IssuerSigningKey");
+var databaseConnectionString = Environment.GetEnvironmentVariable("DefaultConnection");
 
 AddServices();
 ConfigureSwagger();
@@ -83,7 +84,7 @@ void AddServices()
     builder.Services.AddSingleton<ISunriseAndSunsetJsonProcessor, SunriseAndSunsetJsonProcessor>();
 
     //register the repository interfaces and implementations:
-    builder.Services.AddSingleton<ICityRepository, CityRepository>();
+    builder.Services.AddSingleton<ICityRepository>(provider => new CityRepository(configuration, databaseConnectionString));
     builder.Services.AddSingleton<ISunriseAndSunsetRepository, SunriseAndSunsetRepository>();
     
     //register the new application services:
