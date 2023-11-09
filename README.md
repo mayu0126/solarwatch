@@ -1,7 +1,8 @@
 # SolarWatch
 
 ## Overview
-SolarWatch is a simple application designed to deliver precise sunrise and sunset information for a specified city.
+SolarWatch is a simple application designed to deliver precise sunrise and sunset information for a specified city. Check out the deployed application on the link below:
+🌟https://solarwatch-mayu0126.onrender.com/🌟
 
 ![image](https://github.com/mayu0126/solarwatch/assets/117304817/ccded9ee-615e-4214-a9b4-26ad097794f4)
 
@@ -32,45 +33,60 @@ $ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=[yourStrongPassword]" -p 1433:14
 Use the Azure Data Studio or any other database tool to check the connection.
 The username to login to the database is sa (for System Admin), and the password is what you've specified when running the docker command.
 
-5. Install the Entity Framework Core tools globally:
+5. Add your own database connection string:
+Add your own database connection string to the codebase where necessary in order to connect to the dockerized database, or set it as a user secret.
+```
+"Server=localhost,1433; Database=[databaseName]; User Id=sa; Password=[yourStrongPassword]; TrustServerCertificate=True;"
+```
+6. Add Entity Framework Core SQL Server provider:
+```
+$ dotnet add package Microsoft.EntityFrameworkCore.SqlServer -v 6.0.18
+```
+
+7. Install the Entity Framework Core tools globally:
 ```
 $ dotnet tool install --global dotnet-ef
 ```
 
-6. Add the Entity Framework Core Design package to your project:
+8. Add the Entity Framework Core Design package to your project:
 ```
-$ dotnet add package Microsoft.EntityFrameworkCore.Design
-```
-
-7. Create the initial database migration:
-```
-$ dotnet ef migrations add InitialCreate
+$ dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.18
 ```
 
-8. Update the database schema:
+9. Create the initial database migration:
 ```
-$ dotnet ef database update
+$ dotnet ef migrations add InitialCreate --context UsersContext
 ```
 
-9. Start the SolarWatch backend:
+10. Update the database schema:
+```
+$ dotnet ef database update --context UsersContext
+```
+
+11. Create migration for the SolarWatchContext as well and update it:
+```
+$ dotnet ef migrations add InitialCreate --context SolarWatchContext
+$ dotnet ef database update --context SolarWatchContext
+```
+
+12. Start the SolarWatch backend:
 ```
 $ cd backend/SolarWatch
 $ dotnet run
 ```
 
-10. Install frontend dependencies:
+13. Install frontend dependencies:
 ```
 $ cd frontend
 $ npm install
 ```
 
-11. Start the frontend development server:
+14. Start the frontend development server:
 ```
 $ npm start
 ```
 
 ### Additional steps:
 - Register on the https://openweathermap.org/api for your own api key, and change the "apiKey" variable in the GeocodingApi.cs class to yours, or set it as a user secret.
-- Add your own database connection string in the UsershContext.cs class to connect to the dockerized database, or set it as a user secret.
 
 These steps will help you set up the SolarWatch and its database. Enjoy accurate sunrise and sunset data for your favorite cities!
