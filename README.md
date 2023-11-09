@@ -2,7 +2,7 @@
 
 ## Overview
 SolarWatch is a simple application designed to deliver precise sunrise and sunset information for a specified city. Check out the deployed application on the link below:
-🌟https://solarwatch-mayu0126.onrender.com/🌟
+🌟 https://solarwatch-mayu0126.onrender.com/ 🌟
 
 ![image](https://github.com/mayu0126/solarwatch/assets/117304817/ccded9ee-615e-4214-a9b4-26ad097794f4)
 
